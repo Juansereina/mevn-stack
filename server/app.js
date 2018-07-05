@@ -12,8 +12,9 @@ const start = () => {
         cors('*') : cors(`${process.env.HOST_URL}`)
     )
     app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.json())
     app.use('/task', taskRoutes);
-    app.listen(3000);
+    app.listen(5000);
     return config
 }
 

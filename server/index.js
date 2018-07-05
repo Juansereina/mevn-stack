@@ -1,2 +1,2 @@
 const app = require('./app');
-app().then(() => console.log('Running on port:', 3000));
+app().then(() => console.log('Server running')).catch(console.log)
