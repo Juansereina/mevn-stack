@@ -1,13 +1,40 @@
 const taskModel = require('../models/task');
 
-const createNew = req => {
+const createNew = params => {
     const newTask = new taskModel({
-        title: req.body.title,
-        description: req.body.description
+        title: params.body.title,
+        description: params.body.description
     });
-    return newTask
+    return newTask.save();
+}
+
+const getOne = params => {
+    return taskModel.findById(params.body.id);
+}
+
+const getAll = () => {
+    return taskModel.find();
+}
+
+const update = params => {
+    return taskModel.findOneAndUpdate({
+        id: params.body.id
+    }, {
+        title: params.body.title,
+        description: params.body.description
+    })
+}
+
+const deleteOne = params => {
+    return taskModel.findOneAndRemove({
+        id: params.body.id
+    });
 }
 
 module.exports = {
-    createNew
+    createNew,
+    getOne,
+    getAll,
+    update,
+    deleteOne
 }
