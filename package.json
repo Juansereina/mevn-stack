@@ -1,0 +1,29 @@
+{
+  "name": "mevn-stack",
+  "version": "1.0.0",
+  "description": "Sample mevn stack",
+  "main": "server/index.js",
+  "repository": "https://github.com/Juansereina/mevn-stack.git",
+  "author": "Juansereina",
+  "license": "MIT",
+  "scripts": {
+    "start": "SET NODE_ENV=development& nodemon",
+    "test": "SET NODE_ENV=test& jest --forceExit --detectOpenHandles"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jest": "^23.3.0",
+    "mongoose": "^5.2.1"
+  },
+  "devDependencies": {
+    "add": "^2.0.6",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.2.0",
+    "babel-preset-env": "^1.7.0",
+    "regenerator-runtime": "^0.12.0",
+    "yarn": "^1.7.0"
+  }
+}
