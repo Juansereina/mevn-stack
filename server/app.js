@@ -11,7 +11,7 @@ const start = () => {
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(express.json());
     app.use('/task', taskRoutes);
-    app.listen(process.env.PORT);
+    app.listen((process.env.PORT || 5000));
     return config;
 }
 
