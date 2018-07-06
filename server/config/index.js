@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const conecction = mongoose.connect('mongodb://localhost:27017/mevn', {
+const url = process.env.DB;
+const conecction = mongoose.connect(url, {
     useNewUrlParser: true
 });
 
