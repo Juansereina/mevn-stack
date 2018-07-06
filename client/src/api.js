@@ -1,5 +1,5 @@
 const axios = require('axios');
-const url = 'http://localhost:5000';
+const url = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
 const getAllTask = () => {
     try {
         const response = axios({
