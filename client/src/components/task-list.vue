@@ -26,8 +26,8 @@
             </v-list-tile>
           </v-list>
           <v-card-actions>
-            <v-btn flat color="orange">Update</v-btn>
-            <v-btn flat color="orange">Delete</v-btn>
+            <v-btn flat color="orange" @click="update(props.item)" >Update</v-btn>
+            <v-btn flat color="orange" @click="remove(props.item._id)">Delete</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -45,6 +45,19 @@
       pagination: {
         rowsPerPage: 4
       }
-    })
+    }),
+    methods: {
+      remove (task) {
+        this.$emit('removeTask', task)
+      },
+      update(task){        
+        const data = {
+          _id: task._id,
+          title: task.title,
+          description: task.description
+        }
+        this.$emit('updateTask', data);
+      }
+    }
   }
 </script>
